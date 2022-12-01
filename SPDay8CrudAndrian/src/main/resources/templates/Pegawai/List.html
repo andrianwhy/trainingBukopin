@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th ="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Pegawai</title>
+<style type="text/css">
+	table, th, td {
+  			border: 1px solid;
+	}
+</style>
+</head>
+<body>
+	<p>list Pegawai</p>
+	<br>
+	<table>
+	<tr>
+		<td> Total Pegawai</td>
+		<td th:text="${hTotPegawai}"></td>
+	</tr>
+	</table>
+	<br>
+	<table>
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Nama</td>
+			<td>Alamat</td>
+			<td>Umur</td>
+		</tr>
+	</thead>
+		<tr th:each="dt : ${hListPegawai}">
+			<td th:text="${dt.id}"></td>
+			<td th:text="${dt.nama}"></td>
+			<td th:text="${dt.alamat}"></td>
+			<td th:text="${dt.umur}"></td>
+		</tr>
+	</table>
+	<br>
+	<form th:action="@{/addpegawai}">
+		<input type="submit" value="add pegawai">
+	</form>
+	<br>
+	Edit Pegawai
+	<form action="#" th:action="@{/saveupd}" th:object="${PegawaiModel}" method="post">
+	<table>
+		<tr>
+			<td>id</td>
+			<td><input type="text" name="id"> </td>
+			<td>Nama</td>
+			<td><input type="text" name="nama"> </td>
+			<td>Alamat</td>
+			<td><input type="text" name="alamat"> </td>
+			<td>Umur</td>
+			<td><input type="text" name="umur"> </td>
+			<td><input type="submit" value="edit"> </td>
+		</tr>
+	</table>	
+	</form>
+	<br>
+	Delete Pegawai
+	<form action="#" th:action="@{/delpegawai}" th:object="${PegawaiModel}" method="post">
+	<table>
+		<tr>
+			<td>id</td>
+			<td><input type="text" name="id"> </td>
+			<td><input type="submit" value="delete"> </td>
+		</tr>
+	</table>	
+	</form> 
+</body>
+</html>

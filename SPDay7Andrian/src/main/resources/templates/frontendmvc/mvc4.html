@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+mvc4
+<form action="mvc4">
+<table>
+	<tr>
+		<td>Tahun Lulus</td>
+		<td>
+			<select>
+				<option th:each="dt : ${Hlistthn}" th:text="${dt}"></option>
+			</select>
+		</td>
+	</tr>	
+</table>
+<button type="submit">Kirim</button>
+</form>
+</body>
+</html>

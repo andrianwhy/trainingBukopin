@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Karyawan</title>
+<style type="text/css">
+	table, th, td {
+  			border: 1px solid;
+	}
+</style>
+</head>
+<body>
+	<p>list Karyawan</p>
+	<table>
+		<tr th:each="dt:${hListKaryawan}">
+			<td th:text="${dt.id}"></td>
+			<td th:text="${dt.nama}"></td>
+			<td th:text="${dt.umur}"></td>
+		</tr>
+	</table>
+</body>
+</html>

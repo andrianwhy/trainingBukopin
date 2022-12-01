@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th ="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Pegawai</title>
+</head>
+<body>
+Add Pegawai
+<form action="#" th:action="@{/save}" th:object="${PegawaiModel}" method="post">
+<table>
+	<tr>
+		<td>Nama</td>
+		<td> <input type="text" name="nama"> </td>
+	</tr>
+	<tr>
+		<td>Alamat</td>
+		<td> <input type="text" name="alamat"> </td>
+	</tr>
+	<tr>
+		<td>Umur</td>
+		<td> <input type="text" name="umur"> </td>
+	</tr>
+	<tr>
+		<td> <input type="submit" value="Add"> </td>
+		<td></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
