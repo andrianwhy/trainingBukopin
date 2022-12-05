@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th ="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Please</title>
+<style type="text/css">
+	table, th, td {
+  			border: 1px solid;
+	}
+</style>
+</head>
+<body>
+LOGIN : 
+<form action="#" th:action="@{/login}" th:object="${UsersModel}" method="post">
+<table>
+	<tr>
+		<td>users </td>
+		<td>:</td>		
+		<td><input type="text" name="user"> </td>
+	</tr>
+	<tr>
+		<td>password </td>
+		<td>:</td>
+		<td><input type="password" name="password"> </td>
+	</tr>
+</table>
+<br>
+<input type="submit" value="Login"> 
+</form>
+</body>
+</html>

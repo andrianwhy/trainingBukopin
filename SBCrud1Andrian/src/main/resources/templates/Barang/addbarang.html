@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th ="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>add barang</title>
+</head>
+<body>
+Add Barang
+
+<form action="#" th:action="@{/saveBarang}" th:object="${BarangModel}" method="post">
+<table>
+	<tr>
+		<td>Nama Barang</td>
+		<td><input type="text" name="namaBarang"></td>
+	</tr>
+		<tr>
+		<td>Supplier</td>
+		<td><input type="text" name="supplier"></td>
+	</tr>
+		<tr>
+		<td>Qty</td>
+		<td><input type="number" name="qty"></td>
+	</tr>
+	<tr></tr>
+	<tr>
+		<td><input type="submit" value="Add"></td>
+		<td></td>
+	</tr>
+	
+</table>
+</form>
+
+</body>
+</html>

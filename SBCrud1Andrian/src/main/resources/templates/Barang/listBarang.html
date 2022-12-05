@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th ="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Barang</title>
+
+<style type="text/css">
+	table, th, td {
+  			border: 1px solid;
+	}
+</style>
+
+</head>
+<body>
+	<p>Data Barang</p>
+<p>
+	Total Items :
+	<input type="text" th:value="${hCountBag}" disabled="disabled">
+</p>
+<br>
+	<table>
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Nama Barang</td>
+			<td>Supplier</td>
+			<td>QTY</td>
+		</tr>
+	</thead>	
+		<tr th:each="dt:${hListBarang}">
+			<td th:text="${dt.id}"></td>
+			<td th:text="${dt.namaBarang}"></td>
+			<td th:text="${dt.supplier}"></td>
+			<td th:text="${dt.qty}"></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+<form th:action="@{/addbarang}" >
+	<input type="submit" value="Add Barang">
+</form>
+<br>
+<br>
+	Edit Barang
+	<form action="#" th:action="@{/editbarang}" th:object="${BarangModel}" method="post">
+	<table>
+		<tr>
+			<td>id</td>
+			<td><input type="text" name="id"> </td>
+			<td><input type="submit" value="edit"> </td>
+		</tr>
+	</table>	
+	</form>
+<br>
+<br>
+	Delete Barang
+	<form action="#" th:action="@{/deletebarang}" th:object="${BarangModel}" method="post">
+	<table>
+		<tr>
+			<td>id</td>
+			<td><input type="text" name="id"> </td>
+			<td><input type="submit" value="Delete Barang"> </td>
+		</tr>
+	</table>	
+	</form>
+<br>	
+	
+</body>
+</html>
