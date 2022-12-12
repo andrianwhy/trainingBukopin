@@ -1,0 +1,1 @@
+insert into mail_content(isi) values('broadcast email');
